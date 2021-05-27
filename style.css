@@ -11,6 +11,11 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+h3 {
+  font-size: 24px;
+  margin: 6px;
+}
+
 .counter {
   position: fixed;
   top: 50%;
@@ -54,5 +59,58 @@ body {
   }
   100% {
     transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.nums {
+  color: #185adb;
+  font-size: 48px;
+  position: relative;
+  overflow: hidden;
+  width: 250px;
+  height: 48px;
+}
+
+.nums span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(120deg);
+  transform-origin: bottom center;
+}
+
+.nums span.in {
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: goIn 0.44s ease-in-out;
+}
+
+.nums span.out {
+  animation: goOut 0.44s ease-in-out;
+}
+
+@keyframes goIn {
+  0% {
+    transform: translate(-50%, -50%) rotate(120deg);
+  }
+  30% {
+    transform: translate(-50%, -50%) rotate(-15deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(10deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+}
+
+@keyframes goOut {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) rotate(15deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(-120deg);
   }
 }
